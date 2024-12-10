@@ -25,7 +25,7 @@ typedef enum e_interpreter_res
 
 void				init_vm(void);
 void				free_vm(void);
-t_interpreter_res	interpret(t_chunk *chunk);
+t_interpreter_res	interpret(const char *src);
 void				push(Value val);
 Value				pop(void);
 

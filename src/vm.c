@@ -86,11 +86,10 @@ static t_interpreter_res	run(void)
 #undef BINARY_OP
 }
 
-t_interpreter_res	interpret(t_chunk *chunk)
+t_interpreter_res	interpret(const char *src)
 {
-	vm.chunk = chunk;
-	vm.ip = vm.chunk->code;
-	return (run());
+	compile(src);
+	return (INTERPRET_OK);
 }
 
 
