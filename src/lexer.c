@@ -123,6 +123,8 @@ static t_token_type	check_keyword(int start, int len,
 	if (lexer.curr - lexer.start == start + len &&
 			memcmp(lexer.start + start, rem, len))
 		return (type);
+
+	return TOKEN_IDENTIFIER;
 }
 
 static t_token_type	ident_type(void)

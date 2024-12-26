@@ -32,5 +32,6 @@ typedef struct s_token
 }	t_token;
 
 void	init_lexer(const char *src);
+t_token	lex_token(void);
 
 #endif // !LEX_H

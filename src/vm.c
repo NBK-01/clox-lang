@@ -88,8 +88,20 @@ static t_interpreter_res	run(void)
 
 t_interpreter_res	interpret(const char *src)
 {
-	compile(src);
-	return (INTERPRET_OK);
+	t_chunk	chunk;
+	init_chunk(&chunk);
+	if (!compile(src, &chunk))
+	{
+		free_chunk(&chunk);
+		return (INTERPRET_COMPILER_ERROR);
+	}
+	vm.chunk = &chunk;
+	vm.ip = vm.chunk->code;
+
+	t_interpreter_res result = run();
+	free_chunk(&chunk);
+
+	return (result);
 }
 
 

@@ -1,8 +1,4 @@
-#include "../headers/main.h"
-#include "../headers/chunk.h"
-#include "../headers/debug.h"
 #include "../headers/vm.h"
-#include <cstdio>
 #include <stdio.h>
 
 

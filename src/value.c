@@ -1,6 +1,3 @@
-
-
-
 #include "../headers/mem.h"
 #include <stdio.h>
 #include "../headers/value.h"
